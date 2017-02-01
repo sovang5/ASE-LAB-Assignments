@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="" data-ng-app="GoogleDirection">
+<head>
+    <meta t="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js" type="application/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWhSE1HAi753_M8rcFTfcbBXUQInf8y6c&v=3.exp&sensor=true&libraries=places"></script>
+    <script src="js/app.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+
+
+
+    <style>
+        #map-canvas {
+            width: 600px;
+            height: 450px;
+        }
+        .weatherModule {
+            background: #f2f2f2;
+            height: 150px;
+            width: 250px;
+            border: 1px dashed #ccc;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body onload="initialize_to()" >
+
+<div ng-app="GoogleDirection" ng-controller="googlemapoutput">
+    <br/>
+    <br/>
+
+
+        <div class="wrapp" ng-controller="googlemapoutput">
+            <div class="row">
+                <table style="width=80%" align="center" border="5">
+                <tr><td>Start Location</td><td><input type="text"  ng-model="startlocation" onFocus="geolocate()" id="startlocation"/></td>
+                    <td>End Location</td><td><input type="text"  ng-model="endlocation" onFocus="geolocate()" id="endlocation" /></td>
+                    <td><button id="btn" ng-click="calcRoute()">
+                        Get Direction
+                    </button></td></tr>
+    </table>
+</div>
+    <center><div id="map-canvas" style="height: 400px;"></div></center>
+
+    <table style="width=80%" align="center" border="5">
+        <tr><td align="center">Start Location Weather Condition</td><td align="center">End Location weather Condition</td></tr>
+    <tr><td><div class="weatherModule">
+        <p class="currentConditions" ng-bind-html-unsafe="currentweather.html"></p>
+        <div class="currentIcon" ng-bind-html-unsafe="currentIcon.html"></div>
+    </div></td>
+
+    <td><div class="weatherModule">
+        <p class="currentConditions" ng-bind-html-unsafe="descurrentweather.html"></p>
+        <div class="descurrentIcon" ng-bind-html-unsafe="descurrentIcon.html"></div>
+    </div></td></tr>
+</div>
+</div>
+<br>
+
+    <br>
+
+
+
+
+
+</body>
+
+
+
+</html>
+
+
+<script>
+    var autocomplete;
+    function initialize_to() {
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {HTMLInputElement} */(document.getElementById('startlocation')),
+            { types: ['(cities)'] });
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {HTMLInputElement} */(document.getElementById('endlocation')),
+            { types: ['(cities)'] });
+        componentRestrictions: {country: "us"};
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        });
+    }
+
+
+
+
+
+
+
+
+</script>
