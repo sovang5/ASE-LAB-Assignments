@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="" data-ng-app="myApp">
+<head>
+    <meta t="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech Converter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="js/require.js"></script>
+    <script src="js/facebook.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+
+
+    <style>
+        body
+        {
+            background: url('https://c1.staticflickr.com/1/433/32667852826_4f22cbf136_k.jpg') fixed;
+            background-size: cover;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu input{
+            width: 300px;
+            background: transparent;
+            border: 2px solid #1ab188;
+            border-radius: 4px;
+            color: #5e5e5e;
+            font-family: 'Exo', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 6px;
+            margin-top: 10px;
+        }
+        .menu button{
+            width: 350px;
+            height:40px;
+            background:#1ab188;
+            border:  2px solid #ffffff;
+            cursor: pointer;
+            border-radius: 4px;
+            color: #ffffff;
+            font-family: 'Exo', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 2px;
+            margin-top: 10px;
+        }
+        table {
+            max-width: 960px;
+            margin: 10px auto;
+            border: 1px solid #FFF;
+        }
+
+        caption {
+            font-size: 1.6em;
+            font-weight: 400;
+            padding: 10px 0;
+        }
+
+        thead th {
+            font-weight: 400;
+            background: #8a97a0;
+            color: #FFF;
+        }
+
+        tr {
+            background: #f4f7f8;
+            border: 1px solid #FFF;
+            margin-bottom: 5px;
+        }
+
+        tr:nth-child(even) {
+            background: #e8eeef;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 20px;
+            font-weight: 300;
+        }
+
+        tfoot tr {
+            background: none;
+        }
+
+        tfoot td {
+            padding: 10px 2px;
+            font-size: 0.8em;
+            font-style: italic;
+            color: #8a97a0;
+        }
+    </style>
+</head>
+
+<body>
+<div ng-controller="PersonController"  style="...">
+
+    <div class="menu" id="div_SearchContainer">
+        <h1 align="absolute" style="text-align: center; color: #1ab188">Convert your text into Speech</h1>
+        <center><textarea type="text" id="firstName" rows="10" cols="90" placeholder="Enter your Text here to Convert" style="margin-left: 100px"></textarea></center>
+        </br>
+        <center><button id="btn_getReview" data-ng-click="callme()">Convert into Speech</button> </center>
+
+    </div>
+    <center><fb:login-button size="xlarge" autologoutlink="true"
+                              onClick="Logout()">
+        Logout
+
+    </fb:login-button></center>
+
+
+    <audio src="" class="speech" hidden></audio>
+    <div id="div_ReviewList" style="display:none;"  >
+
+
+        <p ng-model="ReviewWithSentiment">
+
+        <TABLE BORDER=2 CELLPADDING=4> <TR> <TH style="color: aliceblue; background:#1ab188" COLSPAN=2>Sentiment Analysis Using Alchemy API </TH> </TR>
+            <TR> <TD>Your Text</TD> <TD>{{ReviewWithSentiment.reviewText}}</TD> </TR>
+            <TR> <TD>Sentiment of you Text</TD> <TD>{{ReviewWithSentiment.sentiment}}</TD> </TR>
+            <TR> <TD>Sentiment Score of your Text</TD> <TD>{{ReviewWithSentiment.score}}</TD> </TR>
+            <TR> <TH style="color: aliceblue; background:#1ab188" COLSPAN=2 BGCOLOR="#445553">{{ReviewWithSentiment.reviewText}}</TH> </TR>
+        </TABLE>
+
+        </p>
+
+    </div>
+
+</div>
+</body>
+</html>
