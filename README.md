@@ -5,3 +5,5 @@ Assignment 1: https://github.com/sovang5/ASE-LAB-Assignments/wiki/Lab-assignment
 Assignment 2: https://github.com/sovang5/ASE-LAB-Assignments/wiki/Lab-Assignment-2
 
 Assignment 3: https://github.com/sovang5/ASE-LAB-Assignments/wiki/Lab-Assignment-3
+
+Assignment 4: https://github.com/sovang5/ASE-LAB-Assignments/wiki/Lab-Assignment-4
