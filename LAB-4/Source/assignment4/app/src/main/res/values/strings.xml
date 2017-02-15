@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">assignment4</string>
+    <string name="title_activity_login_new">login_new</string>
+</resources>
