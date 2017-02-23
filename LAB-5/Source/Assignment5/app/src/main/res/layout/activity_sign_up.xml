@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sign_up"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/back"
+    tools:context="com.example.hp.assignment5.sign_up">
+
+    <EditText
+        android:id="@+id/editText_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Contact Number"
+        android:layout_above="@+id/editText_password"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/editText_emailid" />
+
+    <EditText
+        android:id="@+id/editText_emailid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:hint="Email Id"
+        android:layout_above="@+id/editText_contact"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/editText_name" />
+
+    <EditText
+        android:id="@+id/editText_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:hint="Name"
+        android:layout_above="@+id/editText_emailid"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/lbl_Heading" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:hint="Address"
+        android:id="@+id/input_address"
+        android:layout_above="@+id/btn_signup"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="48dp" />
+
+    <EditText
+        android:id="@+id/editText_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:layout_marginBottom="18dp"
+        android:layout_above="@+id/button"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/input_address" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Locate Me"
+        android:id="@+id/button"
+        android:onClick="getAdrs"
+        android:layout_alignBaseline="@+id/input_address"
+        android:layout_alignBottom="@+id/input_address"
+        android:layout_alignStart="@+id/imageButton"
+        android:layout_marginStart="11dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_signup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:text="Sign Up"
+        android:onClick="onClickMapLocation"
+        android:layout_marginBottom="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/input_address"
+        android:background="@color/colorPrimary"
+
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Please  Register"
+        android:textStyle="bold"
+        android:id="@+id/lbl_Heading"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/button"
+        android:layout_marginTop="17dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:src="@drawable/logo1"
+        android:contentDescription="ImageCapture"
+        android:onClick="selectImage"
+        android:visibility="visible"
+        android:background="@drawable/logo1"
+        android:layout_below="@+id/lbl_Heading"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
