@@ -8,7 +8,7 @@ Assignment 3: https://github.com/sovang5/ASE-LAB-Assignments/wiki/Lab-Assignment
 
 Assignment 4: https://github.com/sovang5/ASE-LAB-Assignments/wiki/Lab-Assignment-4
 
-Assignment5:https://github.com/sovang5/ASE-LAB-Assignments/wiki/Lab-Assignment-5
+Assignment5: https://github.com/sovang5/ASE-LAB-Assignments/wiki/Lab-Assignment-5
 
 
-Assignment 6:https://github.com/sovang5/ASE-LAB-Assignments/wiki/Lab-Assignment-6
+Assignment 6: https://github.com/sovang5/ASE-LAB-Assignments/wiki/Lab-Assignment-6
