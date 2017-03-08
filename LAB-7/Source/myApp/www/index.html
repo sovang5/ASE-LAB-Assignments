@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=10,IE=9,IE=8" />
+    <title>Home Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+        .wrapper
+        {
+            width:980px;
+            margin:0 auto;
+        }
+        .right{
+            float:right;
+        }
+
+        .btn_color{
+            background-color:#5b74a8;
+            border-color: #2f477a;
+            color:#ffffff;
+        }
+        .btn_color:hover {
+            background-color:#2f477a;
+        }
+        .header
+        {
+            background-color: darkseagreen;
+            padding:10px;
+            margin-bottom:10px;
+        }
+        ul li{
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        .clear
+        {
+            clear:both;
+        }
+        .heading
+        {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+
+    </style>
+</head>
+<body  class="home" ng-app="myApp" ng-controller="headerController">
+    
+<div class="wrapper">
+    <h1 class="heading">Home Page </h1>
+    <center><button type="submit" onclick="window.location='FaceDetection.html'" class="btn btn-primary btn-lg" id="Login">Login</button><br><br>
+            <button type="submit" onclick="window.location='barCodeScanner.html'"  class="btn btn-primary btn-lg" id="Register">Register</button></center>
+
+    <div class="viewContainer">
+        <ui-view></ui-view>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="angular-ui-router.js"></script>
+<script type="text/javascript" src="module.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="headerController.js"></script>
+
+
+<script type="text/javascript" src="LoginController.js"></script>
+<script type="text/javascript" src="homeController.js"></script>
+<script type="text/javascript" src="RegisterController.js"></script>
+</body>
+</html>

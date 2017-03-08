@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="" >
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css">
+    <link rel="stylesheet" href="barCodeScanner.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWhSE1HAi753_M8rcFTfcbBXUQInf8y6c&v=3.exp&sensor=true&amp;libraries=places"></script>
+    <script src="barCodeScanner.js" type="text/javascript"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-light bg-faded">
+    
+    <h1 class="navbar-brand m-b-0">Barcode Scanner
+    </h1>
+    <a href="LoginPage.html" class="btn btn-link" id="logout">Logout
+        <span >
+                <i class="glyphicon glyphicon-off"></i>
+            </span></a>
+</nav>
+<div class="form-group">
+    <div class="col-xs-6">
+        <input class="form-control" id="barCodeImageUrl" type="text" placeholder="Enter URL">
+    </div>
+    <button type="submit" onclick="getBarCodeDataFunction()" class="btn btn-primary">Barcode Information</button>
+</div>
+
+<div id="image"></div><br>
+
+<table class='table' id="data"></table>
+</body>
+</html>

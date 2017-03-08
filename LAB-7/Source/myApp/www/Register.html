@@ -1,0 +1,81 @@
+<html>
+<head>
+    <style>
+        .mandatory
+        {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<h2 style="text-align: center">Registration Page</h2>
+
+<form name="userForm" ng-submit="submitForm(userForm.$valid)" ng-controller="RegisterController" novalidate>
+    <ul>
+
+        <li class="row-fluid">
+            <label  for="firstName">First Name<span class="mandatory">*</span></label>
+            <input type="text" name="firstName" class="form-control"  ng-model="firstName" ng-maxlength="15" ng-pattern="/^[\\sa-zA-Z]+[a-zA-Z-\'\\s]*$/" id="firstName" title="firstName" required
+            />
+            <!--   <p ng-show="userForm.firstName.$error.minlength" class="help-block">Username is too short.</p> -->
+            <p ng-show="userForm.firstName.$error.maxlength">Username is too long.</p>
+            <p ng-show="userForm.firstName.$error.pattern">Username is not matching the pattern</p>
+            <!-- <input type="text" name="firstName" maxlength="15" size="24" value="" id="firstName" class="maxwidth" title="firstName"
+            placeholder=""> -->
+
+        </li>
+
+        <li class="row-fluid">
+            <label  for="lastName">Last Name<span class="mandatory">*</span></label>
+            <input type="text" name="lastName" class="form-control"  ng-model="lastName" ng-maxlength="15" ng-pattern="/^[\\sa-zA-Z]+[a-zA-Z-\'\\s]*$/" id="lastName" title="lastName" required
+            />
+            <!--   <p ng-show="userForm.firstName.$error.minlength" class="help-block">Username is too short.</p> -->
+            <p ng-show="userForm.lastName.$error.maxlength">Username is too long.</p>
+            <p ng-show="userForm.lastName.$error.pattern">Username is not matching the pattern</p>
+            <!-- <input type="text" name="firstName" maxlength="15" size="24" value="" id="firstName" class="maxwidth" title="firstName"
+            placeholder=""> -->
+
+        </li>
+
+
+        <li>
+            <label for="emailAddressEP">Email Address<span class="mandatory">*</span></label>
+            <input type="email" name="emailAddressEP" class="form-control" ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.]+\.[a-zA-Z0-9]/" ng-model="emailAddressEP" maxlength="150" size="30" value="" id="emailAddressEP" class="maxwidth" title="Email Address" placeholder="somename@domain.com" required>
+            <!--  <span style="border:1px solid red" ng-if="aboutYouForm.emailAddressEP.$dirty && userForm.emailAddressEP.$invalid"> -->
+
+            <p ng-show="userForm.emailAddressEP.$touched && userForm.emailAddressEP.$error.required">please enter your email address</p>
+            <p ng-show="userForm.emailAddressEP.$error.pattern">please enter valid email address</p>
+
+        </li>
+
+        <li class="row-fluid">
+            <label  for="password">Password<span class="mandatory">*</span></label>
+            <input type="password" name="password" class="form-control"  ng-model="password" ng-maxlength="15" ng-pattern="/^[\\sa-zA-Z0-9]+[a-zA-Z-0-9\'\\s]*$/" id="password" title="password" required
+            />
+            <!--   <p ng-show="userForm.firstName.$error.minlength" class="help-block">Username is too short.</p> -->
+            <p ng-show="userForm.password.$error.maxlength">Username is too long.</p>
+            <p ng-show="userForm.password.$error.pattern">Username is not matching the pattern</p>
+            <!-- <input type="text" name="firstName" maxlength="15" size="24" value="" id="firstName" class="maxwidth" title="firstName"
+            placeholder=""> -->
+
+        </li>
+
+
+
+        <li class="row-fluid">
+            <div class="buttondiv row-fluid showFields" id="showfields2">
+                <label for="aboutYouButton1" class="hidden"></label>
+                <button type="submit" id="aboutYouButton1" class="btnClass next" title="Save &amp; Continue" value="Save &amp; Continue">Register</button>
+                <div class="clear"></div>
+            </div>
+            <p class="ErrorMsg" ng-hide="continueMsg">Registration successful.click <a ui-sref="login">here</a> to login</p>
+        </li>
+
+    </ul>
+</form>
+
+</body>
+</html>

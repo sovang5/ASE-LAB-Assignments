@@ -1,0 +1,54 @@
+<html>
+<head>
+    <style>
+        .mandatory
+        {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<center>
+<h2 style="text-align: center">Login Page</h2>
+<form name="userForm" ng-submit="submitForm(userForm.$valid)" ng-controller="LoginController" novalidate>
+    <ul>
+
+
+
+        <li>
+            <label for="emailAddressEP">Email Address<span class="mandatory">*</span></label>
+            <input type="email" name="emailAddressEP" class="form-control" ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.]+\.[a-zA-Z0-9]/" ng-model="emailAddressEP" maxlength="150" size="30" value="" id="emailAddressEP" class="maxwidth" title="Email Address" placeholder="somename@domain.com" required>
+            <!--  <span style="border:1px solid red" ng-if="aboutYouForm.emailAddressEP.$dirty && userForm.emailAddressEP.$invalid"> -->
+
+            <p ng-show="userForm.emailAddressEP.$touched && userForm.emailAddressEP.$error.required"></p>
+            <p ng-show="userForm.emailAddressEP.$error.pattern"></p>
+
+        </li>
+
+        <li class="row-fluid">
+            <label  for="password">Password<span class="mandatory">*</span></label>
+            <input type="password" name="password" class="form-control"  ng-model="password" ng-maxlength="15" ng-pattern="/^[\\sa-zA-Z0-9]+[a-zA-Z-0-9\'\\s]*$/" id="password" title="password" required
+            />
+            <!--   <p ng-show="userForm.firstName.$error.minlength" class="help-block">Username is too short.</p> -->
+            <p ng-show="userForm.password.$error.maxlength"></p>
+            <p ng-show="userForm.password.$error.pattern"></p>
+            <!-- <input type="text" name="firstName" maxlength="15" size="24" value="" id="firstName" class="maxwidth" title="firstName"
+            placeholder=""> -->
+
+        </li>
+
+        <li class="row-fluid">
+            <div class="buttondiv row-fluid showFields" id="showfields2">
+                <label for="aboutYouButton1" class="hidden"></label>
+                <button type="submit" id="aboutYouButton1" class="btnClass next" title="Save &amp; Continue" value="Save &amp; Continue">Login</button>
+                <div class="clear"></div>
+            </div>
+            <p class="ErrorMsg" ng-hide="continueMsg"></p>
+        </li>
+
+    </ul>
+</form>
+</center>
+
+</body>
+</html>
