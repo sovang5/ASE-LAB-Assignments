@@ -1,0 +1,30 @@
+<ion-view view-title="Scanner">
+    <ion-content  class="padding">
+        <div class="row row-center" >
+        <div class="col text-center" >
+            <img src="http://www.icons101.com/icon_png/size_256/id_25701/barcode.png">
+        </div>
+      </div>
+        <div class="card">
+            <div class="item">
+                <button class="button button-block button-positive" ng-click="scan()">
+                    <i class="icon ion-qr-scanner"></i>
+                    Scan Now
+                </button>
+                <button class="button button-block button-positive" ng-click="scanresult()">
+                    <i class="icon ion-qr-scanner"></i>
+                    Scan 
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-divider">
+                Scan Results
+            </div>
+            <div class="item item-text-wrap">
+                {{vm.scanResults}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

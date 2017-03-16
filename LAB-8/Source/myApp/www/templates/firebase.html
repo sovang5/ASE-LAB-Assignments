@@ -1,0 +1,25 @@
+<ion-view title="Firebase Login">
+    <ion-content>
+         <div class="row row-center" >
+        <div class="col text-center" >
+            <img src="http://iconizer.net/files/Bunch_of_Bluish_Icons/orig/send-group.png">
+        </div>
+      </div>
+            <div class="list list-inset">
+       
+                <label class="item item-input">
+                    <input ng-model="username" type="text" placeholder="Username" />
+                </label>
+                <label class="item item-input">
+                    <input ng-model="password" type="password" placeholder="Password" />
+                </label>
+            </div>
+            <div class="padding-left padding-right">
+              <button class="button button-block button-balanced padding-horizontal" ng_click="login(username,password)" type="submit">Login</button>
+                 <button class="button button-positive button-block" ng-click="LoginwithFacebook()" id="facebook">Login with Facebook</button>
+ 
+        <a href="#register" class="balanced">Register</a>
+            </div>
+        <div class="error">  {{loginFailureMessage}}</div>
+    </ion-content>
+</ion-view>

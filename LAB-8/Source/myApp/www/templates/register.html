@@ -1,0 +1,40 @@
+
+<ion-view view-title="Registration Form">
+ <ion-pane>
+<ion-header-bar>
+  <button class="button button-icon icon ion-home" ng-click="login()" ></button>
+  <h1 class="title">Register</h1>
+  <button class="button button-clear button-positive" ng-click="logout()">Logout</button>
+
+</ion-header-bar>
+
+  <ion-content padding="true">
+ <div class="row row-center" >
+        <div class="col text-center" >
+            <img src="http://trieshield.com/Images/Signup.png">
+        </div>
+      </div>
+      <div class="list" id="registerList">
+      
+  <label class="item item-input">
+    <input type="text" id="username" class="form-control" placeholder="Enter Username" required autofocus ng-model="username">
+  </label>
+  <label class="item item-input">
+ <input type="password" id="password" class="form-control" placeholder="Enter Password" required autofocus ng-model="password">
+  </label>
+    <label class="item item-input">
+   <input type="text" id="email" class="form-control" placeholder="Enter Email" required autofocus ng-model="email">
+  </label>
+      <label class="item item-input">
+        <input type="text" id="question" class="form-control" placeholder="Enter Phone Number" required autofocus ng-model="question">
+      </label>
+      <label class="item item-input">
+        <input type="text" id="answer" class="form-control" placeholder="Enter Address" required autofocus ng-model="answer">
+      </label>
+      <button class="button button-block button-balanced padding-horizontal"  ng-click="register(username,password,email,question,answer)">Register</button>
+</div>
+<div class="error">  {{message}}</div>
+      <div class="success">      {{successmessage}}</div>
+  </ion-content>
+            </ion-pane>
+</ion-view>

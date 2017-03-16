@@ -1,0 +1,11 @@
+{
+    "jscodehints.detectedExclusions": [
+        "D:/UMKC/ASE/Programs/Assignment7/platforms/android/cordova/Api.js",
+        "D:/UMKC/ASE/Programs/Assignment7/platforms/android/build/intermediates/assets/debug/www/js/firebase.js",
+        "D:/UMKC/ASE/Programs/Assignment7/platforms/android/assets/www/js/app.js",
+        "D:/UMKC/ASE/Programs/Assignment7/platforms/android/cordova/lib/run.js",
+        "D:/UMKC/ASE/Programs/Assignment7/platforms/android/cordova/loggingHelper.js",
+        "D:/UMKC/ASE/Programs/Assignment7/platforms/android/cordova/lib/emulator.js",
+        "D:/UMKC/ASE/Programs/Assignment7/platforms/android/cordova/lib/log.js"
+    ]
+}

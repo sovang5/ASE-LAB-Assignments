@@ -1,0 +1,64 @@
+/* Empty. Add your own CSS if you like */
+img{
+    -webkit-user-drag: none;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100px !important;
+    max-height: 100px !important;
+}
+#speechImage{
+    -webkit-user-drag: none;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 150px !important;
+    max-height: 200px !important;  
+}
+.button.button-balanced {
+    border-color: transparent;
+    background-color: #62c3e6;
+    color: #fff;
+}
+.button.button-balanced:hover{
+     background-color: #62c3e6;
+}
+.balanced{
+    float:right;
+    font-size:16px;
+}
+#result{
+    -webkit-user-drag: none;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 200px !important;
+    max-height: 200px !important; 
+}
+#scan{
+    background-image:url('../img/screen.png');
+     background-repeat: no-repeat;
+    background-size: cover;
+}
+#facebook{
+    background-color: #1364ef;
+}
+#x{
+    color:red;
+}
+.error {
+    color: red;
+    font-weight: bold;
+}
+.success{
+    color:green;
+    font-weight: bold;
+}
+#facebook{
+    background:#648abf;
+}
+#gmail{
+    background:#fd3325;
+}
+.pane{
+    background-image: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRbNUkv-oNfKOdt6bEasmxR0NNKQgEfr2CBuMczoMF1cYGHEHPb');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
