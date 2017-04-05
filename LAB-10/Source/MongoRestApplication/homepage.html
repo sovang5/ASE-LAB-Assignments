@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">-->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+     <!--<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">-->
+    <!--<link rel="stylesheet" href="assets/css/form-elements.css">-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <style>
+        h1 {
+            border-bottom: 3px solid #cc9900;
+            color: #996600;
+            font-size: 30px;
+        }
+        table, th , td  {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        table tr:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+    </style>
+    <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+    <script src="app.js"></script>
+    <script src="no.js"></script>
+
+</head>
+<body ng-app="demoMongo" id="body" background="logo1.png" style="background-size:cover">
+
+<center><h2><strong>User Details</strong></h2></center>
+<div id="id01"></div>
+
+<script>
+    var xmlhttp = new XMLHttpRequest();
+    var url = "https://api.mongolab.com/api/1/databases/assdemo/collections/users?apiKey=apCtCUjoIhLjuDjqyT7bE-fYH9ky0zff";
+
+    xmlhttp.onreadystatechange=function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myFunction(this.responseText);
+        }
+    }
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function myFunction(response) {
+        var arr = JSON.parse(response);
+        var i;
+        var out = "<center><table> <tr><td><strong>User No</strong></td><td><strong>First Name</strong></td><td><strong>Last Name</strong></td><td><strong>Email Address</strong></td><td><strong> Mongo ID</strong></td></tr>";
+
+        for(i = 0; i < arr.length; i++) {
+            out += "<tr><td>"+i+"</td><td>" +
+                    arr[i].fname +
+                    "</td><td>" +
+                    arr[i].lname +
+                    "</td><td>" +
+                    arr[i].email +
+                    "</td><td>" +
+                    arr[i]._id["$oid"] +
+                    "</td></tr>";
+        }
+        out += "</table></center>";
+        document.getElementById("id01").innerHTML = out;
+    }
+</script>
+<div ng-controller="MongoRestController" ng-init="disp()">
+
+    <!--<div id="container" class="g1">-->
+
+</div><br>
+<div class="fl1">
+    <h2><strong>Update User Details</strong></h2>
+    <form method="post" action="http://127.0.0.1:8081/update">
+
+        <input type="text" class="textbox1" name="id2" id="id2" placeholder="Enter the ID" />
+        <input type="text" class="textbox1" name="fn" placeholder="Enter First Name" />
+        <input type="text" class="textbox1" name="ln" placeholder="Enter Last Name"/>
+        <input type="text" class="textbox1" name="ml" placeholder="Enter E-Mail"/>
+        <br><br><input type="submit" class="i1" value="Update" >
+    </form></div>
+<div class="fl2">
+    <h2><strong>Delete User Record</strong></h2>
+    ID:<br>
+    <form method="post" action="http://127.0.0.1:8081/delete" autocomplete="on">
+        <input type="text" class="textbox1" name="id1" id="id1" placeholder="Id of the user" />
+        <br><br><input type="submit" class="i1" value="Delete"  >
+
+    </form></div>
+<script>    function sync() {
+    document.getElementById('id1').value=document.getElementById('id2').value;
+}
+</script>
+
+
+</div>
+
+</body>
+</html>
+

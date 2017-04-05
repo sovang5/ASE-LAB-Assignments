@@ -1,0 +1,17 @@
+
+<div ng-controller="registerCntrl" align="center">
+    <h1>
+        Sign up to get access.
+    </h1>
+    <div align="center">
+
+        <input type="text" ng-model="user.name" placeholder="Username"><br><br>
+        <input type="password" ng-model="user.password" placeholder="password"><br><br>
+        <input type="password" placeholder="Re enter password"><br><br>
+        <input type="email"  ng-model="user.email" placeholder="Email"><br><br>
+        <button  ng-click="createAccount(user)">
+            Register
+        </button>
+
+    </div>
+</div>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoMongo" ng-controller="MongoRestController">
+<meta charset="UTF-8">
+
+
+
+
+
+    <head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+
+
+		<script>
+			function validation()
+			{
+				form = document.forms["forme"];
+				name = form["fname"].value;	//name validation
+				if(name.length<6)
+				{
+					alert("Username must have atleast 6 characters");
+					form.focus();
+					return false;
+				}
+				if(!name.match(/^[A-Z][ _A-Za-z]*$/))
+				{
+					alert("Invalid name.Hint:Name must start with Capital letter.");
+					form.focus();
+					return false;
+				}
+
+				mailId = form["email"].value;	//Mail ID validation
+				if(!mailId.match(/^[A-Za-z.]+\@[A-Za-z]+\.[A-Za-z]+$/))
+				{
+					alert("Invalid Mail ID");
+					form.focus();
+					return false;
+				}
+
+
+
+				pwd = form["password"].value;	//password validation
+				if(pwd.length<6)
+				{
+					alert("Length of password should not be less than 6 characters");
+					form.focus();
+					return false;
+				}
+				if(!pwd.match(/^[A-Za-z_]*$/))
+				{
+					alert("Password must contain only alphabets.");
+					form.focus();
+					return false;
+				}
+
+				cnfpwd = form["cpassword"].value;
+				if(pwd != cnfpwd)
+				{
+					alert("Password and confirmed password must match.")
+					form.focus();
+					return false;
+				}
+			}
+		</script>
+    </head>
+
+    <body>
+        <div class="top-content">
+
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-7 text">
+                            <h1><strong> Registration Form </strong></h1>
+
+                            <div class="top-big-link">
+                            	<a class="btn btn-link-1" href="Login.html">Login Page</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Sign up now</h3>
+                            		<p>Sign In</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-pencil"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form name="forme"role="form" action="" method="post" class="registration-form" ng-submit="insertData();" onsubmit="return validation()">
+									<div class="form-group">
+										<label class="sr-only" for="form-first-name">First name</label>
+										<input type="text" name="fname" placeholder="First name..." class="form-first-name form-control" ng-model="formData.fname" id="form-first-name">
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-last-name">Last name</label>
+										<input type="text" name="lname" placeholder="Last name..." ng-model="formData.lname" class="form-last-name form-control" id="form-last-name">
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-first-name">Email</label>
+										<input type="text" name="email" placeholder="Email..." class="form-email form-control" ng-model="formData.email" id="form-email">
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-last-name">Password</label>
+										<input type="password" name="password" placeholder="Password" class="form-last-name form-control" ng-model="formData.password" id="form-passwordr">
+									</div>
+									<div class="form-group">
+										<label class="sr-only" for="form-last-name">Confirm Password</label>
+										<input type="password" name="cpassword" placeholder="Confirm Password" ng-model="formData.cpassword" class="form-last-name form-control" id="form-cnfpassword">
+									</div>
+			                        <button type="submit" class="btn">Register Details</button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/retina-1.1.0.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+		<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+		<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+		<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+		<script src="js/index.js"></script>
+
+    </body>
+
+</html>
